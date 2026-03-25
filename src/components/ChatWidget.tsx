@@ -48,6 +48,9 @@ const Header = styled.div`
   color: white;
 
   background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  button {
+    display: flex;
+  }
 `;
 
 const HeaderLeft = styled.div`

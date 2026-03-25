@@ -1,4 +1,3 @@
-import { type Variants } from "framer-motion";
 import { GraduationCap, Mail, GitCommit } from "lucide-react";
 import {
   AvatarImage,
@@ -15,20 +14,13 @@ import {
   Title,
 } from "./styles";
 import type { User } from "../types";
+import { itemVariants } from "../constant";
 
 interface ProfileHeaderProps {
   user: User;
 }
 
 const ProfileHeader = ({ user }: ProfileHeaderProps) => {
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    show: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
 
   return (
     <Card variants={itemVariants} whileHover={{ y: -8, scale: 1.02 }}>
