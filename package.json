@@ -16,6 +16,7 @@
     "motion": "^12.38.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-social-icons": "^6.25.0",
     "styled-components": "^6.3.12",
     "tailwindcss": "^4.2.2"
   },

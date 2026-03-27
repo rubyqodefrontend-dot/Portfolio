@@ -39,16 +39,6 @@ function App() {
   const [resolvedTheme, setResolvedTheme] = useState("light");
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "system");
 
-  useEffect(() => {
-    fetchProfile();
-  }, []);
-
-  useEffect(() => {
-    if (chatOpen) {
-      chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [chatMessages, chatOpen]);
-
   const fetchProfile = async () => {
     try {
       const res = await axios.get(
@@ -103,6 +93,16 @@ function App() {
       setChatLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+
+  useEffect(() => {
+    if (chatOpen) {
+      chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [chatMessages, chatOpen]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");

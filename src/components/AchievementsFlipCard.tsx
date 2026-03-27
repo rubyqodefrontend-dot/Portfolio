@@ -4,6 +4,7 @@ import {
   AchievementGlow,
   AchievementTitle,
   YearBadge,
+  AchievementCardContainer
 } from "./styles";
 import type { Achievement } from "../types";
 
@@ -12,11 +13,10 @@ interface AchievementsFlipCardProps {
 }
 const AchievementsFlipCard = ({ achievements }: AchievementsFlipCardProps) => {
   return (
-    <>
+    <AchievementCardContainer>
       {achievements?.map((ach) => (
         <AchievementCard key={ach.id}>
           <AchievementGlow />
-
           <AchievementTitle>
             {ach.title}
             <YearBadge>{ach.year}</YearBadge>
@@ -25,7 +25,7 @@ const AchievementsFlipCard = ({ achievements }: AchievementsFlipCardProps) => {
           <AchievementDesc>{ach.description}</AchievementDesc>
         </AchievementCard>
       ))}
-    </>
+    </AchievementCardContainer>
   );
 };
 

@@ -1,4 +1,7 @@
-import { GraduationCap, Mail, GitCommit } from "lucide-react";
+import { GraduationCap, Mail } from "lucide-react";
+import { SocialIcon } from 'react-social-icons';
+import styled from "styled-components";
+
 import {
   AvatarImage,
   AvatarOverlay,
@@ -6,10 +9,8 @@ import {
   Bio,
   Card,
   Content,
-  IconBox,
   InfoItem,
   InfoRow,
-  SocialButton,
   SocialRow,
   Title,
 } from "./styles";
@@ -48,42 +49,24 @@ const ProfileHeader = ({ user }: ProfileHeaderProps) => {
         <InfoRow>
           {user.college && (
             <InfoItem>
-              <IconBox>
-                <GraduationCap size={18} />
-              </IconBox>
+                <StyledGraduationCap size={20} />
               <span>{user.college}</span>
             </InfoItem>
           )}
 
           {user.email && (
             <InfoItem>
-              <IconBox>
-                <Mail size={18} />
-              </IconBox>
+                <StyledMail size={20} />
               <span>{user.email}</span>
             </InfoItem>
           )}
         </InfoRow>
-
         <SocialRow>
           {user.github && (
-            <SocialButton
-              whileHover={{ y: -4 }}
-              href={user.github}
-              target="_blank"
-            >
-              <GitCommit size={22} />
-            </SocialButton>
+            <SocialIcon url={user?.github} target="_blank" style={{ height: 35, width: 35 }} />
           )}
-
           {user.linkedin && (
-            <SocialButton
-              whileHover={{ y: -4 }}
-              href={user.linkedin}
-              target="_blank"
-            >
-              <GitCommit size={22} />
-            </SocialButton>
+            <SocialIcon url={user?.linkedin} target="_blank" style={{ height: 35, width: 35 }} />
           )}
         </SocialRow>
       </Content>
@@ -92,3 +75,17 @@ const ProfileHeader = ({ user }: ProfileHeaderProps) => {
 };
 
 export default ProfileHeader;
+
+const iconStyles = ({ theme }: { theme: { mode: string  } }) => `
+  background: ${theme.mode === "dark" ? "rgba(99,102,241,0.2)" : "#eef2ff"};
+  padding: 0.5rem;
+  border-radius: 9999px;
+`;
+
+const StyledGraduationCap = styled(GraduationCap)`
+  ${iconStyles}
+`;
+
+const StyledMail = styled(Mail)`
+  ${iconStyles}
+`;

@@ -140,13 +140,6 @@ export const InfoItem = styled.div`
   color: ${({ theme }) => (theme.mode === "dark" ? "#cbd5f5" : "#475569")};
 `;
 
-export const IconBox = styled.div`
-  padding: 0.5rem;
-  border-radius: 9999px;
-
-  background: ${({ theme }) =>
-    theme.mode === "dark" ? "rgba(99,102,241,0.2)" : "#eef2ff"};
-`;
 /* Social Links */
 export const SocialRow = styled.div`
   margin-top: 1rem;
@@ -156,25 +149,6 @@ export const SocialRow = styled.div`
 
   @media (min-width: 768px) {
     justify-content: flex-start;
-  }
-`;
-
-export const SocialButton = styled(motion.a)`
-  padding: 0.75rem;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-  transition: all 0.3s ease;
-
-  background: ${({ theme }) => (theme.mode === "dark" ? "#1e293b" : "#4f46e5")};
-
-  &:hover {
-    transform: translateY(-4px);
-    background: ${({ theme }) =>
-      theme.mode === "dark" ? "#334155" : "#4338ca"};
   }
 `;
 
@@ -459,6 +433,13 @@ export const Grade = styled.div`
     ${({ theme }) =>
       theme.mode === "dark" ? "#334155" : "#e2e8f0"};
 `;
+
+export const AchievementCardContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`
 
 export const AchievementCard = styled.div`
   position: relative;
